@@ -1,0 +1,13 @@
+.canvasGradient {
+  position: absolute; /* Fondamentale: si adatta al padre relative */
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 0;
+  --gradient-color-1: #d5ffb8;
+  --gradient-color-2: #7ee665;
+  --gradient-color-3: #2fb84f;
+  --gradient-color-4: #006b2e;
+}

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* Questa riga dice a Tailwind: 
+     "Crea la classe font-allura usando il valore della variabile --font-allura" 
+  */
+  --font-allura: var(--font-allura);
+}
+body {
+  background-color: white;
+}
+.grow-height {
+  height: 100px; /* Altezza iniziale */
+  overflow: hidden;
+  transition: height 0.5s ease-in-out; /* La magia avviene qui */
+}
+.grow-height:hover {
+  height: 330px; /* Altezza finale */
+  background-color: white;
+}
