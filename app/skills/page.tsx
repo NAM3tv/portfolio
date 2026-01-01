@@ -38,7 +38,7 @@ export default function SkillsPage() {
               [scrollbar-color:rgba(0,0,0,0.2)_transparent]
             ">
               {skillsData.map((item, index) => (
-                <Skill 
+                <Skill
                   key={index} 
                   name={item} 
                 />

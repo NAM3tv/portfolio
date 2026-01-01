@@ -1,6 +1,9 @@
 "use client"
 import Image from "next/image";
+import { useState } from "react";
+
 function Skill({name}: { name: string }){
+    const [isHovered, setIsHovered] = useState("");
     function imgHandle(techName: string){
         switch(techName){
             case "Html":
@@ -33,11 +36,12 @@ function Skill({name}: { name: string }){
     const techName = imgHandle(name);
 
     function handleMouseEnter(){
+        setIsHovered("border-2 border-solid border-[#42b847]");
         // Aggiungi qui eventuali effetti al passaggio del mouse
     }
     return (
         <>
-            <div onMouseEnter={handleMouseEnter} className="w-[30%] aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center">
+            <div onMouseEnter={handleMouseEnter} className={`w-[30%] aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center ${isHovered}`}>
                 <Image src={techName} width={100} height={100} alt="python logo" className="w-[60%]"/>
                 <h2 className="mt-4 font-bold text-[20px]">{name}</h2>
             </div>
