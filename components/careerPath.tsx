@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRef } from "react";
 import Btn from "./btn"
 import { MdOutlineTask } from "react-icons/md";
@@ -11,19 +11,31 @@ const TaskIcon = MdOutlineTask as any;
 const WhereIcon = LuMapPin as any;
 const LinkIcon = FiExternalLink as any;
 
-function CareerPath({companyName, companyLogo, role, startDate, finishDate, location, tasks, webLink}: any){
+function CareerPath({companyName, companyLogo, role, startDate, finishDate, location, tasks, webLink, className}: any){
     const careerContainerRef = useRef<HTMLDivElement>(null);
+    const componentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if(componentRef.current!.classList.contains("firstCareerElement")){
+            careerContainerRef.current!.classList.remove("hidden");
+        }
+    }, []);
+
+
     function handleMouseEnter(){
+        componentRef.current!.classList.remove("firstCareerElement");
         careerContainerRef.current!.classList.remove("hidden");
     }
+
     function handleMouseLeave(){
         careerContainerRef.current!.classList.add("hidden");
     }
+
     return (
         <>
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="h-[15vh] w-full flex overflow-hidden relative grow-height">
+        <div ref={componentRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`h-[15vh] w-full flex overflow-hidden relative grow-height ${className}`}>
             <div className="absolute w-[5px] ml-[100px] h-full bg-[#42b847]"></div>
-            <Image src={companyLogo} width={50} height={50} alt="Generali Logo" className="rounded-[10px] ml-[75px] z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
+            <Image src={companyLogo} width={50} height={50} alt="Generali Logo" className="rounded-[10px] ml-[77px] z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
             <div className="w-full mt-[10px]">
                 <div className="w-full flex items-center text-[18px]">
                     <p className="ml-[2%] font-bold">{companyName}</p>
@@ -39,16 +51,16 @@ function CareerPath({companyName, companyLogo, role, startDate, finishDate, loca
                     </div>
                     <ul className="list-disc list-outside ml-5 mt-2.5">
                         {
-                            tasks.map((item: any) => {
+                            tasks.map((item: any, index:any) => {
                                 return(
-                                    <li>{item}</li>
+                                    <li key={index}>{item}</li>
                                 )
                             })
                         }
                     </ul>
                     {webLink && (
                         <Btn 
-                            className="mt-5" 
+                            className="mt-5 w-[15%]" 
                             text="Web Site" 
                             icon={<LinkIcon className="text-white text-[16px]"/>}
                             webLink = {webLink}

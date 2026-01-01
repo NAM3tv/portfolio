@@ -6,6 +6,7 @@ import CareerPath from "@/components/careerPath";
 import careerData from "@/data/career.json";
 
 export default function Home() {
+  let first = true;
   return (
     <div className="flex relative ml-[5%">
       <div className="w-[65%] flex-col items-center">
@@ -13,9 +14,10 @@ export default function Home() {
         <div className="ml-[5%]">
             <h1 className="text-3xl font-bold my-[5vh] ml-[80px]">Career</h1> 
             {
-              careerData.map((item) => {
+              careerData.map((item, index) => {
                 return(
                 <CareerPath
+                key={index}
                 companyName={item.companyName}
                 startDate={item.startDate}
                 finishDate={item.finishDate}
@@ -24,7 +26,9 @@ export default function Home() {
                 role={item.role}
                 tasks={item.tasks}
                 webLink={item.webLink}
+                className={index === 0 ? "firstCareerElement" : ""}
                 />
+                
                 );
               })
               

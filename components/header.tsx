@@ -7,8 +7,8 @@ function Header(){
             <Link href="/" className="text-[#42b847] font-allura font-bold text-[2.2vw] cursor-pointer">Glavan</Link>
             <Link href="/career" className="mx-[5%] cursor-pointer">Career</Link>
             <Link href="/projects" className="cursor-pointer mr-[5%]">Projects</Link>
-            <Link href="#" className="mr-[5%]">Certifications</Link>
-            <Link href="#">Contacts</Link>
+            <Link href="/skills" className="mr-[5%]">Skills</Link>
+            <Link href="/contacts">Contacts</Link>
         </header>
     );
 }

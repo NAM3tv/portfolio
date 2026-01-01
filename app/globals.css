@@ -17,5 +17,7 @@ body {
 }
 .grow-height:hover {
   height: 330px; /* Altezza finale */
-  background-color: white;
+}
+.firstCareerElement{
+  height: 330px;
 }

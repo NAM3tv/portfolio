@@ -3,7 +3,7 @@
       "id": 1,
       "companyName": "Msg S.p.A",
       "role": "Software Developer",
-      "companyLogo": "/msgLogo.png",
+      "companyLogo": "/img/msgLogo.png",
       "startDate": "01/01/2024",
       "finishDate": "01/04/2024",
       "location": "Udine, Italy",
@@ -13,6 +13,7 @@
     {
       "id": 2,
       "companyName": "Morfeux, Inc.",
+      "companyLogo": "/img/morfeux.svg",
       "role": "Web Developer",
       "startDate": "2021",
       "finishDate": false,
@@ -23,7 +24,7 @@
     {
       "id": 3,
       "companyName": "Generali S.p.A",
-      "companyLogo": "/generaliLogo.png",
+      "companyLogo": "/img/generaliLogo.png",
       "role": "IT Consultant",
       "startDate": "01/08/2025",
       "finishDate": false,
