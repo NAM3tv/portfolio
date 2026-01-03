@@ -23,15 +23,15 @@ function ProjectCard({name, type, coverImg, images, tech, link}: any) {
     }
 
     return (
-        <div className="w-[20%] h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
+        <div className="flex flex-col w-[20%] h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
             <Image src={coverImg} width={1920} height={1080} alt="info" className="w-[calc(96%)] rounded-[20px] m-[2%] coverImg"/>
-            <h1 className="ml-2 mt-[5%] font-semibold text-[1.4vw] projectName"></h1>
-            <div className="type w-full ml-2 mb-[2%] flex items-center just">
+            <h1 className="ml-2 mt-1 font-semibold text-[1.2vw] projectName">{name}</h1>
+            <div className="type w-full ml-2 flex items-center just">
                 {iconHandle(type)}
                 <p className="text-[15px]">{type} Project</p>
             </div>
             <p className="ml-2 text-[14px] mt-[15px] mb-[0px]">Tech Involved:</p>
-            <div className="projectTechContainer w-full h-auto flex flex-wrap mx-[2%] my-[2%] mt-[-5px]">
+            <div className="w-full h-auto flex-1 min-h-0 flex flex-wrap px-[2%] my-[2%] mt-[-5px] overflow-y-auto content-start">
                 {
                     tech && tech.map((item: any, index: any)=>{
                         return(

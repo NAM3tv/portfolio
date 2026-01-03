@@ -8,7 +8,7 @@ export default function Home(){
         <Background clipPath="polygon(0% 75%, 100% 45%, 100% 68%, 0% 100%)"/>
         <Header/>
         <h1 className="text-3xl font-bold mt-[5vh] ml-[7%]">Projects</h1> 
-        <div className="w-full h-auto relative z-1 flex flex-wrap justify-center
+        <div className="w-full h-auto relative z-1 flex flex-wrap justify-center animate-spawn
             /* 1. Nasconde le frecce e personalizza la larghezza */
             [&::-webkit-scrollbar]:w-[8px]
             [&::-webkit-scrollbar-button]:hidden

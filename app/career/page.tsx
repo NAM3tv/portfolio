@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex relative ml-[5%">
       <div className="w-[65%] flex-col items-center">
         <Header />
-        <div className="ml-[5%]">
+        <div className="ml-[5%] animate-spawn">
             <h1 className="text-3xl font-bold my-[5vh] ml-[80px]">Career</h1> 
             {
               careerData.map((item, index) => {

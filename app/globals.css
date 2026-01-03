@@ -21,3 +21,20 @@ body {
 .firstCareerElement{
   height: 330px;
 }
+
+/* Definiamo i fotogrammi dell'animazione */
+@keyframes spawn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Parte 20px più in basso */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* Arriva alla posizione originale */
+  }
+}
+
+/* Creiamo la classe da applicare al div */
+.animate-spawn {
+  animation: spawn 0.5s ease-out forwards;
+}

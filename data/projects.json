@@ -9,7 +9,7 @@
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
       ],
-      "tech": ["Html","Css", "Python", "Nginx", "JavaScript", "FastApi", "Docker", "PostgreSQL", "Electron.js", "React.js", "Next.js"],
+      "tech": ["Html","Css", "JavaScript", "Nginx", "Python", "FastApi", "Docker", "PostgreSQL", "Electron.js", "React.js", "Next.js"],
       "link": "https://morfeux.com/"
     },
     {

@@ -1,8 +1,61 @@
+"use client"
 import Header from "@/components/header";
 import Skill from "@/components/skill";
 import skillsData from "@/data/skills.json";
+import projectsData from "@/data/projects.json";
+import { useState, useEffect, useRef } from "react";
+import Achivment from "@/components/achivment";
 
 export default function SkillsPage() {
+
+  const [selectedSkill, setSelectedSkill] = useState<string | null>("React.js");
+  const [topic, setTopic] = useState<string | null>("Tech");
+  const onFocusBtnClass = "bg-[#42b847] text-white"
+
+  function topicHadle(topicName: string){
+    if(topicName === "Tech"){
+      return (
+        skillsData.skills.map((item, index) =>   
+              (
+                <Skill
+                  key={index} 
+                  name={item} 
+                  onClick ={() => setSelectedSkill(item)}
+                  isActive = {item === selectedSkill}
+                  type = ""
+                />
+              ))
+      );
+    }
+    if(topicName === "Tools & APIs"){
+      return(
+        <>
+        {skillsData.tools.map((item, index) =>   
+              (
+                <Skill
+                  key={index} 
+                  name={item} 
+                  onClick ={() => setSelectedSkill(item)}
+                  isActive = {item === selectedSkill}
+                  type="tool"
+                />
+              ))}
+        {skillsData.apis.map((item, index) =>   
+              (
+                <Skill
+                  key={index} 
+                  name={item} 
+                  onClick ={() => setSelectedSkill(item)}
+                  isActive = {item === selectedSkill}
+                  type="api"
+                />
+              ))}
+        </>
+      ) 
+    }
+  }
+
+
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       <Header />
@@ -15,13 +68,15 @@ export default function SkillsPage() {
           
           {/* COLONNA SINISTRA: SKILLS (65%) */}
           <div className="w-[65%] flex flex-col h-full">
-            <h1 className="text-2xl font-bold mt-[4vh] ml-[8%] shrink-0">
+            <h1 className="text-2xl font-bold mt-[3vh] ml-[9%] shrink-0">
               Skills & Technologies
             </h1>
-
-            {/* BOX DELLE SKILL CON SCROLLBAR PERSONALIZZATA */}
-            <div className="
-              w-[80%] ml-[8%] mb-[4vh] mt-5 flex-1 flex flex-wrap justify-center content-start
+            <div className="w-full mt-5">
+              <button onClick={() => {setTopic("Tech"); setSelectedSkill("React.js")}} className={`ml-[9%] cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-4 transition-all duration-300 ${topic === "Tech" ? onFocusBtnClass :"" }`}>Tech</button>
+              <button onClick={() => {setTopic("Tools & APIs"); setSelectedSkill("OpenAI SDK")}} className={` ml-5 cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-3 transition-all duration-300 ${topic === "Tools & APIs" ? onFocusBtnClass : ""}`}>Tools & APIs</button>
+            </div>
+            <div key={topic} className="
+              w-[80%] ml-[8%] mb-[3vh] mt-5 flex-1 flex flex-wrap content-start animate-spawn
               overflow-y-auto
               /* Classi per la scrollbar senza frecce */
               [&::-webkit-scrollbar]:w-2
@@ -37,20 +92,26 @@ export default function SkillsPage() {
               [scrollbar-width:thin]
               [scrollbar-color:rgba(0,0,0,0.2)_transparent]
             ">
-              {skillsData.map((item, index) => (
-                <Skill
-                  key={index} 
-                  name={item} 
-                />
-              ))}
+              {topicHadle(topic!)}
             </div>
           </div>
 
           {/* COLONNA DESTRA: ACHIEVEMENTS (35%) */}
           <div className="w-[35%] flex flex-col h-full relative overflow-hidden">
             <h1 className="text-2xl font-bold mt-[4vh]">Achievements</h1>
-            <div className="flex-1 w-[80%] mb-[4vh] rounded-[20px] bg-gray-100 mt-5">
-              {/* Contenuto Achievements */}
+            <div key={selectedSkill} className="flex-1 w-[80%] mb-[4vh]  mt-5 animate-spawn">
+              <p className="mb-4">{selectedSkill}</p>
+              {
+                projectsData.filter(project => 
+                  project.tech.includes(selectedSkill!)
+                ).map((filteredProject, index) => 
+                  <Achivment 
+                    key={index} 
+                    img={filteredProject.coverImg} 
+                    name={filteredProject.name}
+                  />
+                )
+              }
             </div>
           </div>
 

@@ -1,9 +1,12 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import { AiOutlineTool } from "react-icons/ai";
+import { TbApi } from "react-icons/tb";
+const ToolIcon = AiOutlineTool as any;
+const ApiIcon = TbApi as any;
 
-function Skill({name}: { name: string }){
-    const [isHovered, setIsHovered] = useState("");
+function Skill({name, onClick, isActive, type}: { name: string , onClick?: () => void, isActive:boolean, type:string}) {
     function imgHandle(techName: string){
         switch(techName){
             case "Html":
@@ -30,19 +33,22 @@ function Skill({name}: { name: string }){
                 return "/img/react.svg";
             case "Next.js":
                 return "/img/next.svg";
+            case "LeafLet":
+                return "/img/leafLet.svg";
+            case "Git":
+                return "/img/git.svg";
+            case "OpenAI SDK":
+                return "/img/openai.svg";
             default: return "";
         }
     }
     const techName = imgHandle(name);
 
-    function handleMouseEnter(){
-        setIsHovered("border-2 border-solid border-[#42b847]");
-        // Aggiungi qui eventuali effetti al passaggio del mouse
-    }
     return (
         <>
-            <div onMouseEnter={handleMouseEnter} className={`w-[30%] aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center ${isHovered}`}>
-                <Image src={techName} width={100} height={100} alt="python logo" className="w-[60%]"/>
+            <div onClick={onClick} className={`w-[18%] relative aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center cursor-pointer transition duration-300 hover:scale-105 ${isActive ? 'border-4 border-[#42b847]' : 'border-transparent'}`}>
+                <Image src={techName} width={100} height={100} alt="python logo" className="w-[50%]"/>
+                {type === "tool" ? <ToolIcon className="absolute text-[25px] top-1.5 left-1.5"/> : type === "api" ? <ApiIcon className="absolute text-[25px] top-1.5 left-1.5" /> : ""}
                 <h2 className="mt-4 font-bold text-[20px]">{name}</h2>
             </div>
         </>

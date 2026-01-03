@@ -34,9 +34,9 @@ function techContainer({name}: any){
     const techName = imgHandle(name);
 
     return (
-        <div className="w-fit flex items-center justify-center bg-[#f2f3f7] rounded-[20px] p-2.5 mr-[2%] mt-[4%] text-[#42b847] focus:border-solid focus:border-[#42b847]">
-            <Image src={techName} width={16} height={16} alt="" className="mr-1.25"/>
-            <p>{name}</p>
+        <div className="w-fit h-10 flex items-center justify-center bg-[#f2f3f7] rounded-[20px] p-2.5 mr-[2%] mt-3 text-[#42b847] focus:border-solid focus:border-[#42b847]">
+            <Image src={techName} width={14} height={14} alt="" className="mr-1.25"/>
+            <p className="text-[14px]">{name}</p>
         </div> 
     );
 }
