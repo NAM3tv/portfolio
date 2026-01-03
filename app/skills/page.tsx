@@ -99,14 +99,29 @@ export default function SkillsPage() {
           {/* COLONNA DESTRA: ACHIEVEMENTS (35%) */}
           <div className="w-[35%] flex flex-col h-full relative overflow-hidden">
             <h1 className="text-2xl font-bold mt-[4vh]">Achievements</h1>
-            <div key={selectedSkill} className="flex-1 w-[80%] mb-[4vh]  mt-5 animate-spawn">
+            <div key={selectedSkill} className="flex-1 w-[80%] mb-[4vh]  mt-5 animate-spawn overflow-y-auto
+            /* Classi per la scrollbar senza frecce */
+              [&::-webkit-scrollbar]:w-2
+              [&::-webkit-scrollbar-button]:h-0
+              [&::-webkit-scrollbar-button]:w-0
+              [&::-webkit-scrollbar-track]:bg-transparent
+              [&::-webkit-scrollbar-thumb]:bg-black/20
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              [&::-webkit-scrollbar-thumb]:border-2
+              [&::-webkit-scrollbar-thumb]:border-transparent
+              [&::-webkit-scrollbar-thumb]:bg-clip-content
+              hover:[&::-webkit-scrollbar-thumb]:bg-[#42b847]
+              [scrollbar-width:thin]
+              [scrollbar-color:rgba(0,0,0,0.2)_transparent]
+            ">
               <p className="mb-4">{selectedSkill}</p>
               {
                 projectsData.filter(project => 
-                  project.tech.includes(selectedSkill!)
+                  project.tech.includes(selectedSkill!) || project.tools.includes(selectedSkill!)
                 ).map((filteredProject, index) => 
                   <Achivment 
                     key={index} 
+                    id= {filteredProject.id}
                     img={filteredProject.coverImg} 
                     name={filteredProject.name}
                   />

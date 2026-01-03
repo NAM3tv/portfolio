@@ -5,7 +5,7 @@ import projectsData from "@/data/projects.json";
 export default function Home(){
     return(
         <>
-        <Background clipPath="polygon(0% 75%, 100% 45%, 100% 68%, 0% 100%)"/>
+        <Background clipPath="polygon(0% 55%, 100% 25%, 100% 70%, 0% 100%)" className="mt-40"/>
         <Header/>
         <h1 className="text-3xl font-bold mt-[5vh] ml-[7%]">Projects</h1> 
         <div className="w-full h-auto relative z-1 flex flex-wrap justify-center animate-spawn
@@ -32,6 +32,7 @@ export default function Home(){
                     return(
                         <ProjectCard
                         key={index}
+                        id={item.id}
                         name={item.name}
                         type={item.type}
                         coverImg={item.coverImg}

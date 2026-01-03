@@ -4,13 +4,15 @@ import TechContainer from "@/components/techContainer";
 import { IoMdBusiness } from "react-icons/io";
 import { TbSchool } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+
 
 const SchoolIcon = TbSchool as any;
 const BusinessIcon = IoMdBusiness as any;
 const PersonalIcon = FaRegUser as any;
 
-function ProjectCard({name, type, coverImg, images, tech, link}: any) {
-
+function ProjectCard({id, name, type, coverImg, tech}: any) {
+    const router = useRouter();
     function iconHandle(type: string){
         switch(type){
             case "School":
@@ -22,8 +24,12 @@ function ProjectCard({name, type, coverImg, images, tech, link}: any) {
         }
     }
 
+    function clickHandle(id:string){
+        router.push(`/project/${id}`);
+    }
+
     return (
-        <div className="flex flex-col w-[20%] h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
+        <div onClick={() => clickHandle(id)} className="flex flex-col w-[20%] h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
             <Image src={coverImg} width={1920} height={1080} alt="info" className="w-[calc(96%)] rounded-[20px] m-[2%] coverImg"/>
             <h1 className="ml-2 mt-1 font-semibold text-[1.2vw] projectName">{name}</h1>
             <div className="type w-full ml-2 flex items-center just">
@@ -33,9 +39,9 @@ function ProjectCard({name, type, coverImg, images, tech, link}: any) {
             <p className="ml-2 text-[14px] mt-[15px] mb-[0px]">Tech Involved:</p>
             <div className="w-full h-auto flex-1 min-h-0 flex flex-wrap px-[2%] my-[2%] mt-[-5px] overflow-y-auto content-start">
                 {
-                    tech && tech.map((item: any, index: any)=>{
+                    tech && tech.map((item: string, index: any)=>{
                         return(
-                            <TechContainer key={index} name={item}/>
+                            <TechContainer key={index} name={item} pxSize={13}/>
                         );
                     })
                 }

@@ -1,6 +1,6 @@
 
     {
-        "skills": ["Html","Css","Tailwind","JavaScript", "React.js", "Next.js","Electron.js", "Python","FastApi", "Nginx", "Docker", "PostgreSQL"],
+        "skills": ["Html","Css","Tailwind","JavaScript", "React.js", "Next.js","Electron.js", "Python","FastApi","BeautifulSoup", "Nginx", "Docker", "PostgreSQL"],
         "tools": ["Git"],
         "apis": ["OpenAI SDK", "LeafLet", "Stripe"]
     }

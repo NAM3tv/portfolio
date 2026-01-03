@@ -3,6 +3,7 @@
       "id": "0",
       "name": "eSports Platform",
       "type": "Business",
+      "companyName": "Morfeux, Inc.",
       "description": "I co-founded an eSports startup focused on building a competitive matchmaking platform where CS2 players can monetize their in-game skills. I led the front-end development, designed the UI/UX, and managed API integrations to ensure a seamless user experience. I also supported backend development, handled administrative operations, and developed the Electron.js desktop client used by our AI-powered anti-cheat system.",
       "coverImg": "/img/morfeux.png",
       "images": [
@@ -10,12 +11,14 @@
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
       ],
       "tech": ["Html","Css", "JavaScript", "Nginx", "Python", "FastApi", "Docker", "PostgreSQL", "Electron.js", "React.js", "Next.js"],
+      "tools": ["Git", "Stripe"],
       "link": "https://morfeux.com/"
     },
     {
       "id": "1",
       "name": "Automated Archiving",
       "type": "Business",
+      "companyName": "Msg S.p.A",
       "description": "I developed a Python automation script that handled the digital archiving of an company's physical documents. Using OCR, the system extracted text from scanned files, identified key information, and automatically renamed and categorized each document based on predefined rules. Once processed, the documents were uploaded and organized within the company’s cloud storage, creating a fully automated and reliable archiving workflow.",
       "coverImg": "/img/msg.png",
       "images": [
@@ -23,6 +26,7 @@
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
       ],
       "tech": ["Python"],
+      "tools": ["Git"],
       "link": "https://morfeux.com/"
     },
     {
@@ -36,6 +40,7 @@
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
       ],
       "tech": ["Html","Css", "Nginx", "JavaScript", "FastApi", "PostgreSQL"],
+      "tools": ["Git", "LeafLet"],
       "link": "https://bus-now.com/"
     },
     {
@@ -48,7 +53,8 @@
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
       ],
-      "tech": ["Html","Css", "Nginx", "JavaScript","Python", "FastApi", "PostgreSQL"],
+      "tech": ["Html","Css", "Nginx", "JavaScript","Python", "FastApi","BeautifulSoup", "PostgreSQL"],
+      "tools": ["Git"],
       "link": "https://bitcunia.com/"
     },
     {
@@ -61,6 +67,7 @@
         { "src": "/assets/projects/portfolio/cover.jpg", "alt": "Anteprima portfolio", "role": "cover" }
       ],
       "tech": ["Html", "Css", "JavaScript", "Tailwind", "Nginx", "React.js", "Next.js"],
+      "tools": ["Git"],
       "link": "https://.com/"
     }
 ]

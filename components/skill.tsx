@@ -39,17 +39,21 @@ function Skill({name, onClick, isActive, type}: { name: string , onClick?: () =>
                 return "/img/git.svg";
             case "OpenAI SDK":
                 return "/img/openai.svg";
-            default: return "";
+            case "Stripe":
+                return "/img/stripe.svg";
+            case "BeautifulSoup":
+                return "/img/beautifulSoup.svg"
+            default: return "/";
         }
     }
     const techName = imgHandle(name);
 
     return (
         <>
-            <div onClick={onClick} className={`w-[18%] relative aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center cursor-pointer transition duration-300 hover:scale-105 ${isActive ? 'border-4 border-[#42b847]' : 'border-transparent'}`}>
+            <div onClick={onClick} className={`w-[20%] relative aspect-square rounded-[20px] self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center cursor-pointer transition duration-300 hover:scale-105 ${isActive ? 'border-4 border-[#42b847]' : 'border-transparent'}`}>
                 <Image src={techName} width={100} height={100} alt="python logo" className="w-[50%]"/>
                 {type === "tool" ? <ToolIcon className="absolute text-[25px] top-1.5 left-1.5"/> : type === "api" ? <ApiIcon className="absolute text-[25px] top-1.5 left-1.5" /> : ""}
-                <h2 className="mt-4 font-bold text-[20px]">{name}</h2>
+                <h2 className="mt-3 font-bold text-[20px]">{name}</h2>
             </div>
         </>
     );
