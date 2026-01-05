@@ -1,12 +1,15 @@
 import Header from "@/components/header";
-import { notFound } from "next/navigation";
+import { notFound} from "next/navigation";
 import TechContainer from "@/components/techContainer"
+import Btn from "@/components/btn"
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
 import careerData from "@/data/career.json";
 import { IoMdBusiness } from "react-icons/io";
 import { MdOutlineDescription } from "react-icons/md";
 import { RiStackLine } from "react-icons/ri";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -32,6 +35,17 @@ function companyInfos(){
             )
         }
     }
+function github(){
+    if(project!.git){
+        return(
+            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="w-[30%] h-[5vh] py-7 border-2 border-[#525657] ml-5 flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
+        )
+    }else{
+        return(
+            <Btn text="GitHub" icon={<FaGithub/>} className="w-[30%] h-[5vh] py-7 border-2 border-[red] ml-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-default!"/>
+        )
+    }
+}
     return(
         
     <>
@@ -66,8 +80,9 @@ function companyInfos(){
                         )
                     }
                 </div>
-                <div className="bg-[#42b847] w-[30%] h-[9%] mt-10 flex items-center justify-center text-white shadow-[0_0_10px_2px_#42b847] cursor-pointer projectLinkBtn">
-                    <p>Web Site</p>
+                <div className="flex w-full items-center mt-10">
+                    <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="w-[30%] py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
+                    {github()}
                 </div>
             </div>
         </div>

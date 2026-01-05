@@ -15,7 +15,7 @@ function Btn({text, icon, className, webLink, siteLink}: any){
     return (
         <div onClick={redirect} className={` h-[5vh] flex items-center justify-center cursor-pointer bg-[#42b847] ${className}`}>
             {icon}
-            <p className="text-[18px] text-white m-0 p-0 ml-[5%]">{text}</p>
+            <p className="text-[18px] m-0 p-0 ml-[5%]">{text}</p>
         </div> 
     );
 }

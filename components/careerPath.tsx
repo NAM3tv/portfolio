@@ -60,7 +60,7 @@ function CareerPath({companyName, companyLogo, role, startDate, finishDate, loca
                     </ul>
                     {webLink && (
                         <Btn 
-                            className="mt-5 w-[15%]" 
+                            className="mt-5 w-[15%] text-white" 
                             text="Web Site" 
                             icon={<LinkIcon className="text-white text-[16px]"/>}
                             webLink = {webLink}

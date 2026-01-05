@@ -12,6 +12,7 @@
       ],
       "tech": ["Html","Css", "JavaScript", "Nginx", "Python", "FastApi", "Docker", "PostgreSQL", "Electron.js", "React.js", "Next.js"],
       "tools": ["Git", "Stripe"],
+      "git": false,
       "link": "https://morfeux.com/"
     },
     {
@@ -27,7 +28,8 @@
       ],
       "tech": ["Python"],
       "tools": ["Git"],
-      "link": "https://morfeux.com/"
+      "git": false,
+      "link": "https://www.msgrent.com/chi-siamo/"
     },
     {
       "id": "2",
@@ -41,6 +43,7 @@
       ],
       "tech": ["Html","Css", "Nginx", "JavaScript", "FastApi", "PostgreSQL"],
       "tools": ["Git", "LeafLet"],
+      "git": "/",
       "link": "https://bus-now.com/"
     },
     {
@@ -55,6 +58,7 @@
       ],
       "tech": ["Html","Css", "Nginx", "JavaScript","Python", "FastApi","BeautifulSoup", "PostgreSQL"],
       "tools": ["Git"],
+      "git": "/",
       "link": "https://bitcunia.com/"
     },
     {
@@ -68,6 +72,7 @@
       ],
       "tech": ["Html", "Css", "JavaScript", "Tailwind", "Nginx", "React.js", "Next.js"],
       "tools": ["Git"],
+      "git": "/",
       "link": "https://.com/"
     }
 ]
