@@ -20,7 +20,7 @@ export default function Home() {
           <Link href="/skills" className="ml-20 font-bold text-[#42b847] text-[18px] flex items-center"><LuBookMarked className="mr-1"/>Skills</Link>
         </div>
       </div>
-      <div className="w-[35%] h-screen relative overflow-hidden">
+      <div className="w-[35%] min-h-screen h-full relative overflow-hidden">
           <Background />
       </div>
     </div>
