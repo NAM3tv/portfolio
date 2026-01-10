@@ -5,6 +5,7 @@ import skillsData from "@/data/skills.json";
 import projectsData from "@/data/projects.json";
 import { useState, useEffect, useRef } from "react";
 import Achivment from "@/components/achivment";
+import MobileNav from "@/components/mobileNav"
 
 export default function SkillsPage() {
 
@@ -58,16 +59,17 @@ export default function SkillsPage() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
+      <MobileNav page="skills"/>
       <Header />
 
       {/* Contenitore principale che occupa lo spazio rimanente */}
-      <div className="flex flex-1 relative h-0">
+      <div className="flex flex-1 relative h-0 overflow-auto">
         
         {/* Wrapper per bloccare le colonne dentro lo schermo */}
-        <div className="absolute inset-0 flex">
+        <div className="absolute inset-0 flex lg:flex-row flex-col">
           
           {/* COLONNA SINISTRA: SKILLS (65%) */}
-          <div className="w-[65%] flex flex-col h-full">
+          <div className="lg:w-[65%] flex flex-col lg:h-full">
             <h1 className="text-2xl font-bold mt-[3vh] ml-[9%] shrink-0">
               Skills & Technologies
             </h1>
@@ -76,8 +78,8 @@ export default function SkillsPage() {
               <button onClick={() => {setTopic("Tools & APIs"); setSelectedSkill("OpenAI SDK")}} className={` ml-5 cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-3 transition-all duration-300 ${topic === "Tools & APIs" ? onFocusBtnClass : ""}`}>Tools & APIs</button>
             </div>
             <div key={topic} className="
-              w-[80%] ml-[8%] mb-[3vh] mt-5 flex-1 flex flex-wrap content-start animate-spawn
-              overflow-y-auto
+              lg:w-[80%]  w-[90%] lg:ml-[8%] mx-[5%] lg:mb-[3vh] mt-5 lg:flex-1 flex lg:flex-wrap content-start animate-spawn
+              overflow-x-auto
               /* Classi per la scrollbar senza frecce */
               [&::-webkit-scrollbar]:w-2
               [&::-webkit-scrollbar-button]:h-0
@@ -97,9 +99,9 @@ export default function SkillsPage() {
           </div>
 
           {/* COLONNA DESTRA: ACHIEVEMENTS (35%) */}
-          <div className="w-[35%] flex flex-col h-full relative overflow-hidden">
-            <h1 className="text-2xl font-bold mt-[4vh]">Achievements</h1>
-            <div key={selectedSkill} className="flex-1 w-[80%] mb-[4vh]  mt-5 animate-spawn overflow-y-auto
+          <div className="lg:w-[35%] flex flex-col lg:h-full h-auto relative lg:overflow-hidden">
+            <h1 className="text-2xl font-bold lg:mt-[4vh] mt-[2vh] lg:mx-0 mx-5">Achievements</h1>
+            <div key={selectedSkill} className="lg:flex-1 h-full flex-col flex lg:w-[80%] w-[90%] lg:mb-[4vh] mt-5 animate-spawn lg:overflow-y-auto lg:mx-0 mx-5 mb-[15vh] pb-[15vh]
             /* Classi per la scrollbar senza frecce */
               [&::-webkit-scrollbar]:w-2
               [&::-webkit-scrollbar-button]:h-0

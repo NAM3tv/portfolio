@@ -3,32 +3,32 @@ import Background from "@/components/background";
 import { MdAlternateEmail } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { FiGithub } from "react-icons/fi";
-
+import MobileNav from "@/components/mobileNav"
 
 
 export default function Home(){
     return(
         <>
     <div className="flex relative">
-      <div className="w-[65%] flex-col items-center">
+      <div className="w-[65%] flex-col items-center z-1">
         <Header />
-        <div className="relative animate-spawn w-full ml-[7%]">
+        <div className="relative  animate-spawn w-full ml-[7%]">
           <h1 className="text-3xl font-bold mt-[5vh] ">Get in touch</h1>
-          <div className="w-[40%] h-[15vh] mt-[5vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px]">
+          <div className="lg:w-[40%] w-75 h-[15vh] mt-[5vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px] bg-white">
             <MdAlternateEmail className=" ml-[5%] text-[#42b847] text-[90px]"/>
             <div className="w-full">
               <p className="ml-[3%] text-[#919598]">Email</p>
               <p className="ml-[3%] font-bold">st3eps@gmail.com</p>
             </div>
           </div>
-          <div className="w-[40%] h-[15vh] mt-[3vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px]">
+          <div className="lg:w-[40%] w-75 h-[15vh] mt-[3vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px] bg-white">
             <IoCallOutline  className=" ml-[5%] text-[#42b847] text-[90px]"/>
             <div className="w-full">
               <p className="ml-[3%] text-[#919598]">Phone</p>
               <p className="ml-[3%] font-bold">+39 3757375191</p>
             </div>
           </div>
-          <div className="w-[40%] h-[15vh] mt-[3vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px]">
+          <div className="lg:w-[40%] w-75 h-[15vh] mt-[3vh] flex items-center border-l-5 border-l-[#42b847] shadow-[0_0_20px_1px_rgba(0,0,0,0.2)] text-[20px] bg-white">
             <FiGithub   className=" ml-[5%] text-[#42b847] text-[90px]"/>
             <div className="w-full">
               <p className="ml-[3%] text-[#919598]">Github</p>
@@ -37,9 +37,10 @@ export default function Home(){
           </div>
         </div>
       </div>
-      <div className="w-[35%] h-screen relative overflow-hidden">
+      <div className="w-[35%] h-screen relative overflow-hidden z-0">
           <Background />
       </div>
+      <MobileNav page="contacts"/>
     </div>
     </>
     )

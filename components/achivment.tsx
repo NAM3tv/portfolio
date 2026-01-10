@@ -14,7 +14,7 @@ function Achivment({id, img, name} : AchivmentProps){
     }
     return (
         <>
-            <div onClick={() => clickHandle(id)} className="w-full h-30 rounded-[20px] border-3 border-[#42b847] flex items-center p-4 my-5 cursor-pointer">
+            <div onClick={() => clickHandle(id)} className="lg:w-full w-auto shrink-0 h-30 rounded-[20px] border-3 border-[#42b847] flex items-center p-4 my-3 lg:mx-0 mx-2 cursor-pointer">
                 <Image src={img} width={1920} height={1080} alt="" className="w-30 rounded-[10px]"/>
                 <p className="ml-5 text-[20px] font-bold flex items-center">{name}{<LinkIcon className="ml-1 text-[20px]"/>}</p>
             </div>

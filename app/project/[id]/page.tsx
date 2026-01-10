@@ -10,6 +10,7 @@ import { MdOutlineDescription } from "react-icons/md";
 import { RiStackLine } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import MobileNav from "@/components/mobileNav"
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -27,7 +28,7 @@ function companyInfos(){
         if(project!.type === "Business"){
             return(
                 careerData.filter(career => career.companyName === project?.companyName).map((company, index) =>(
-                    <div key={index} className="w-fit flex items-center mt-1 bg-[#f2f3f7] p-2 rounded-[20px]">
+                    <div key={index} className="w-fit flex items-center mt-1 bg-[#f2f3f7] p-2 rounded-[20px] mx-[5%] lg:mx-0">
                         <Image src={company.companyLogo} width={30} height={30} alt="" className="rounded-[10px]"/>
                         <p className="font-bold ml-3 text-[16px]">{company.companyName}</p>
                     </div>
@@ -38,11 +39,11 @@ function companyInfos(){
 function github(){
     if(project!.git){
         return(
-            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="w-[30%] h-[5vh] py-7 border-2 border-[#525657] ml-5 flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
+            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="lg:w-[30%] lg:mb-0 mb-[15vh] w-full h-[5vh] py-7 border-2 lg:ml-5 lg:mt-0 mt-5 border-[#525657] flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
         )
     }else{
         return(
-            <Btn text="GitHub" icon={<FaGithub/>} className="w-[30%] h-[5vh] py-7 border-2 border-[red] ml-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-default!"/>
+            <Btn text="GitHub" icon={<FaGithub/>} className="lg:w-[30%] w-full h-[5vh] lg:mb-0 mb-[15vh] py-7 border-2 border-[red] lg:ml-5 lg:mt-0 mt-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-not-allowed!"/>
         )
     }
 }
@@ -51,16 +52,17 @@ function github(){
     <>
     <main className="h-screen flex flex-col">
         <Header/>
-        <div className="flex-1 flex w-full  z-1 relative animate-spawn overflow-y-auto">
-            <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] w-[60%] h-[70%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
-            <div className="w-[50%] mx-[5%]">
-                <h1 className="font-bold text-[2vw] projectTitle mb-3 mt-10">{project.name}</h1>
-                {project.type === "Business" ? <p className="text-[15px] flex items-center"> <IoMdBusiness className="mr-1"/> Business</p> : ""}
+        <MobileNav page="projects"/>
+        <div className="flex-1 flex lg:flex-row flex-col h-full  z-1 relative animate-spawn overflow-y-auto pb-[10vh]">
+            <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] lg:w-[60%] lg:h-[70%] w-[90%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
+            <div className="lg:w-[50%] lg:mx-[5%]">
+                <h1 className="font-bold lg:text-[2vw] text-2xl projectTitle mb-3 mt-10 mx-[5%] lg:mx-0">{project.name}</h1>
+                {project.type === "Business" ? <p className="text-[15px] flex items-center mx-[5%] lg:mx-0"> <IoMdBusiness className="mr-1"/> Business</p> : ""}
                 {companyInfos()}
-                <p className="text-[15px] flex items-center mt-5"><MdOutlineDescription className="mr-1"/> Description </p>
-                <p className=" leading-relaxed w-full my-2 relative projectDescription flex items-center ">{project.description}</p>
-                <p className="text-[15px] flex items-center mt-5"> <RiStackLine className="mr-1"/> Tech Stack</p>
-                <div className="w-full flex flex-wrap content-start">
+                <p className="text-[15px] flex items-center mt-5 mx-[5%] lg:mx-0"><MdOutlineDescription className="mr-1"/> Description </p>
+                <p className=" leading-relaxed lg:w-full w-[90%] my-2 relative projectDescription flex items-center mx-[5%] lg:mx-0">{project.description}</p>
+                <p className="text-[15px] flex items-center mt-5 mx-[5%] lg:mx-0"> <RiStackLine className="mr-1"/> Tech Stack</p>
+                <div className="lg:w-full w-[90%] flex flex-wrap content-start mx-[5%] lg:mx-0">
                     {
                         project.tech.map((tech, index) =>
                             <TechContainer
@@ -79,10 +81,10 @@ function github(){
                             />
                         )
                     }
-                </div>
-                <div className="flex w-full items-center mt-10">
-                    <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="w-[30%] py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
-                    {github()}
+                    <div className="flex lg:flex-row flex-col w-full items-center mt-10">
+                        <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="lg:w-[30%] w-full py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
+                        {github()}
+                    </div>
                 </div>
             </div>
         </div>

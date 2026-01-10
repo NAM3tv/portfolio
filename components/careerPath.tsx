@@ -33,9 +33,9 @@ function CareerPath({companyName, companyLogo, role, startDate, finishDate, loca
 
     return (
         <>
-        <div ref={componentRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`h-[15vh] w-full flex overflow-hidden relative grow-height ${className}`}>
-            <div className="absolute w-[5px] ml-[100px] h-full bg-[#42b847]"></div>
-            <Image src={companyLogo} width={50} height={50} alt="Generali Logo" className="rounded-[10px] ml-[77px] z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
+        <div ref={componentRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`lg:h-[15vh] h-auto w-full flex overflow-hidden relative lg:grow-height ${className}`}>
+            <div className="absolute w-[5px] lg:ml-[100px] ml-7 h-full bg-[#42b847]"></div>
+            <Image src={companyLogo} width={50} height={50} alt="Generali Logo" className="rounded-[10px] lg:ml-[77px] ml-1 z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
             <div className="w-full mt-[10px]">
                 <div className="w-full flex items-center text-[18px]">
                     <p className="ml-[2%] font-bold">{companyName}</p>
@@ -43,7 +43,7 @@ function CareerPath({companyName, companyLogo, role, startDate, finishDate, loca
                     <p className=" flex items-center">{<WhereIcon className="w-[16px]"/>} {location}</p>
                 </div>
                 <h1 className="ml-[2%]">{startDate} - {!finishDate ? "Now" : finishDate}</h1>
-                <div ref={careerContainerRef} className="w-full ml-[2%] hidden">
+                <div ref={careerContainerRef} className="w-full ml-[2%] lg:hidden">
                     <h2 className="mt-[15px] p-0 font-bold">{role}</h2>
                     <div className="flex w-full items-center mt-[15px]">
                         <TaskIcon className="text-[16px]"/>
@@ -60,7 +60,7 @@ function CareerPath({companyName, companyLogo, role, startDate, finishDate, loca
                     </ul>
                     {webLink && (
                         <Btn 
-                            className="mt-5 w-[15%] text-white" 
+                            className="lg:mt-5 lg:w-[15%] w-[50%] my-5 text-white" 
                             text="Web Site" 
                             icon={<LinkIcon className="text-white text-[16px]"/>}
                             webLink = {webLink}

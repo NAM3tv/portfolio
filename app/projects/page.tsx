@@ -2,13 +2,15 @@ import Header from "@/components/header";
 import Background from "@/components/background"
 import ProjectCard from "@/components/projectCard";
 import projectsData from "@/data/projects.json";
+import MobileNav from "@/components/mobileNav"
 export default function Home(){
     return(
         <>
         <Background clipPath="polygon(0% 55%, 100% 25%, 100% 70%, 0% 100%)" className="mt-40"/>
         <Header/>
+        <MobileNav page="projects"/>
         <h1 className="text-3xl font-bold mt-[5vh] ml-[7%]">Projects</h1> 
-        <div className="w-full h-auto relative z-1 flex flex-wrap justify-center animate-spawn
+        <div className="w-full h-auto relative z-1 flex lg:flex-wrap lg:flex-row flex-col justify-center animate-spawn
             /* 1. Nasconde le frecce e personalizza la larghezza */
             [&::-webkit-scrollbar]:w-[8px]
             [&::-webkit-scrollbar-button]:hidden
