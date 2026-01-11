@@ -70,11 +70,11 @@ export default function SkillsPage() {
           
           {/* COLONNA SINISTRA: SKILLS (65%) */}
           <div className="lg:w-[65%] flex flex-col lg:h-full">
-            <h1 className="text-2xl font-bold mt-[3vh] ml-[9%] shrink-0">
+            <h1 className="text-2xl font-bold mt-[3vh] lg:ml-[9%] ml-[5%] shrink-0">
               Skills & Technologies
             </h1>
             <div className="w-full mt-5">
-              <button onClick={() => {setTopic("Tech"); setSelectedSkill("React.js")}} className={`ml-[9%] cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-4 transition-all duration-300 ${topic === "Tech" ? onFocusBtnClass :"" }`}>Tech</button>
+              <button onClick={() => {setTopic("Tech"); setSelectedSkill("React.js")}} className={`lg:ml-[9%] ml-[5%] cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-4 transition-all duration-300 ${topic === "Tech" ? onFocusBtnClass :"" }`}>Tech</button>
               <button onClick={() => {setTopic("Tools & APIs"); setSelectedSkill("OpenAI SDK")}} className={` ml-5 cursor-pointer border-2 border-[#42b847] rounded-[20px] py-1 px-3 transition-all duration-300 ${topic === "Tools & APIs" ? onFocusBtnClass : ""}`}>Tools & APIs</button>
             </div>
             <div key={topic} className="

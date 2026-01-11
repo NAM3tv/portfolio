@@ -30,7 +30,7 @@ function ProjectCard({id, name, type, coverImg, tech}: any) {
 
     return (
         <div onClick={() => clickHandle(id)} className="flex flex-row lg:flex-col lg:w-[20%] w-[90%] ml-[5%] lg:ml-0 lg:h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
-            <Image src={coverImg} width={1920} height={1080} alt="info" className="lg:w-[calc(96%)] w-[35%] rounded-[20px] m-[2%]"/>
+            <Image src={coverImg} width={1920} height={1080} alt="info" className="lg:w-[calc(96%)] w-[40%] rounded-[20px] m-[2%]"/>
             <div className="">
                 <h1 className="ml-2 mt-1 font-semibold lg:text-[1.2vw] projectName">{name}</h1>
                 <div className="type w-full ml-2 flex items-center just">

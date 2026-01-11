@@ -1,13 +1,17 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import {useState} from "react";
 import Header from "@/components/header"; // L'alias @ è magico!
 import Background from "@/components/background";
 import CareerPath from "@/components/careerPath";
 import careerData from "@/data/career.json";
 import MobileNav from "@/components/mobileNav"
+import CareerPathMobile from "@/components/mobileCareerPath"
 
 export default function Home() {
-  let first = true;
+  const [hoverStatus, SetHoverStatus] = useState("Msg S.p.A")
+  const [firstElement, setFirstElement] = useState("firstCareerElement")
   return (
     <div className="flex relative ml-[5%] mb-[15vh]">
       <div className="lg:w-[65%] w-[95%] flex-col items-center">
@@ -28,7 +32,28 @@ export default function Home() {
                 role={item.role}
                 tasks={item.tasks}
                 webLink={item.webLink}
-                className={index === 0 ? "firstCareerElement" : ""}
+                isFirst = {index === 0 ? true : false}
+                
+                />
+                
+                );
+              })
+              
+            }
+            {
+              careerData.map((item, index) => {
+                return(
+                <CareerPathMobile
+                key={index}
+                companyName={item.companyName}
+                startDate={item.startDate}
+                finishDate={item.finishDate}
+                location = {item.location}
+                companyLogo={item.companyLogo}
+                role={item.role}
+                tasks={item.tasks}
+                webLink={item.webLink}
+                
                 />
                 
                 );
