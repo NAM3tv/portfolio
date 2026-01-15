@@ -10,7 +10,10 @@ import { MdOutlineDescription } from "react-icons/md";
 import { RiStackLine } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { MdOutlineReportProblem } from "react-icons/md";
 import MobileNav from "@/components/mobileNav"
+
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -43,7 +46,7 @@ function github(){
         )
     }else{
         return(
-            <Btn text="GitHub" icon={<FaGithub/>} className="lg:w-[30%] w-full h-[5vh] lg:mb-0 mb-[15vh] py-7 border-2 border-[red] lg:ml-5 lg:mt-0 mt-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-not-allowed!"/>
+            <Btn text="Private" icon={<FaGithub/>} className="lg:w-[30%] w-full h-[5vh] lg:mb-0 mb-[15vh] py-7 border-2 border-[red] lg:ml-5 lg:mt-0 mt-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-not-allowed!"/>
         )
     }
 }
@@ -57,11 +60,13 @@ function github(){
             <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] lg:w-[60%] lg:h-[70%] w-[90%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
             <div className="lg:w-[50%] lg:mx-[5%]">
                 <h1 className="font-bold lg:text-[2vw] text-2xl projectTitle mb-3 mt-10 mx-[5%] lg:mx-0">{project.name}</h1>
-                {project.type === "Business" ? <p className="text-[15px] font-bold flex items-center mx-[5%] lg:mx-0"> <IoMdBusiness className="mr-1"/> Business</p> : ""}
+                {project.type === "Business" ? <p className="text-[15px] font-bold flex items-center mx-[5%] lg:mx-0"> <IoMdBusiness className="mr-1 text-[18px]"/> Business</p> : ""}
                 {companyInfos()}
-                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><MdOutlineDescription className="mr-1"/> Description </p>
+                <p className="text-[15px] text-red-500 font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><MdOutlineReportProblem   className="mr-1 text-[18px]"/> Problem </p>
+                <p className=" leading-relaxed lg:w-full w-[90%] my-2 relative projectDescription flex items-center mx-[5%] lg:mx-0">{project.problem}</p>
+                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><HiOutlineLightBulb className="mr-1 text-[18px]"/> Solution </p>
                 <p className=" leading-relaxed lg:w-full w-[90%] my-2 relative projectDescription flex items-center mx-[5%] lg:mx-0">{project.description}</p>
-                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"> <RiStackLine className="mr-1"/> Tech Stack</p>
+                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"> <RiStackLine className="mr-1 text-[18px]"/> Tech Stack</p>
                 <div className="lg:w-full w-[90%] flex flex-wrap content-start mx-[5%] lg:mx-0">
                     {
                         project.tech.map((tech, index) =>

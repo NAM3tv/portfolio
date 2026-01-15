@@ -4,7 +4,8 @@
       "name": "eSports Platform",
       "type": "Business",
       "companyName": "Morfeux, Inc.",
-      "description": "I co-founded an eSports startup focused on building a competitive matchmaking platform where CS2 players can monetize their in-game skills. I led the front-end development, designed the UI/UX, and managed API integrations to ensure a seamless user experience. I also supported backend development, handled administrative operations, and developed the Electron.js desktop client used by our AI-powered anti-cheat system.",
+      "problem": "Competitive CS2 players lacked a platform for continuous monetization of their gaming skills, restricted only to fixed-schedule tournaments with specific registration deadlines.",
+      "description": "I co-founded an eSports startup to address this gap, building an on-demand competitive matchmaking platform. I led the front-end development, designed the UI/UX, and managed API integrations to ensure a seamless user experience. Furthermore, I supported back-end development, handled administrative operations, and developed the custom Electron.js desktop client used by our AI-powered anti-cheat system.",
       "coverImg": "/img/morfeux.png",
       "images": [
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
@@ -20,7 +21,8 @@
       "name": "Automated Archiving",
       "type": "Business",
       "companyName": "Msg S.p.A",
-      "description": "I developed a Python automation script that handled the digital archiving of an company's physical documents. Using OCR, the system extracted text from scanned files, identified key information, and automatically renamed and categorized each document based on predefined rules. Once processed, the documents were uploaded and organized within the company’s cloud storage, creating a fully automated and reliable archiving workflow.",
+      "problem":"The company’s manual archiving process required two dedicated employees and was limited to a maximum capacity of 1,000 documents per day per worker.",
+      "description": "I developed a Python automation script to digitize the entire workflow using OCR technology for text extraction and automatic document categorization. By automating the identification, renaming, and cloud-syncing processes, the system made the archiving workflow 10x faster than manual processing. This automation completely eliminated the need for dedicated manual labor for this task, significantly reducing operational costs and reallocating human resources to higher-value activities.",
       "coverImg": "/img/msg.png",
       "images": [
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
@@ -35,7 +37,9 @@
       "id": "2",
       "name": "Uber but for Bus",
       "type": "School",
-      "description": "I developed a school project inspired by the Uber model but designed for bus transportation. Created for a competition organized by the Chamber of Commerce—where it achieved second place—the platform allowed users to track bus locations in real time, purchase tickets online, and interact with a simple JavaScript-based assistant that queried the database to suggest the best route. As the project had no budget, I built a functional demo focusing on the core features. I handled the entire development process, including front-end, back-end, and UI/UX design.",
+      "problem": "Local commuters lacked real-time bus tracking and route guidance; regional apps only supported ticket purchases, forcing users to know their routes in advance without any live updates or suggestions.",
+      "description":"I developed (as a school project) a comprehensive transit platform that won second place in a Chamber of Commerce competition. I designed an Uber-like experience for public transport, featuring real-time bus tracking and a integrated ticketing system. To solve the navigation gap, I built a JavaScript-based assistant that queries the database to suggest optimal routes. As the sole developer, I managed the full lifecycle—from UI/UX design to both front-end and back-end—delivering a high-impact functional demo with zero budget.",
+      "descriptionOld": "I developed a school project inspired by the Uber model but designed for bus transportation. Created for a competition organized by the Chamber of Commerce—where it achieved second place—the platform allowed users to track bus locations in real time, purchase tickets online, and interact with a simple JavaScript-based assistant that queried the database to suggest the best route. As the project had no budget, I built a functional demo focusing on the core features. I handled the entire development process, including front-end, back-end, and UI/UX design.",
       "coverImg": "/img/busnow.png",
       "images": [
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
@@ -50,7 +54,9 @@
       "id": "3",
       "name": "Cryprto Ecommerce",
       "type": "Personal",
-      "description": "I’ve always been passionate about emerging technologies and the DeFi ecosystem, so I set out to explore its potential by developing a crypto-based eCommerce concept. The idea was to allow users to purchase products directly in cryptocurrency, without relying on fiat at any point. For this project, I built only the core portion of the platform needed to run an initial smoke test and gauge user interest. I handled every aspect of the prototype — front-end, back-end, and UI/UX design — creating a functional preview of how decentralized payments could seamlessly integrate into an online shopping experience.",
+      "problem":"People have no way to use their cryptocurrencies without necessarily having to go through fiat currency exchanges for everyday purchases.",
+      "description": "Driven by my passion for DeFi and emerging tech, I developed a functional MVP to conduct a smoke test and validate user interest. I handled the entire full-stack process—UI/UX, front-end, and back-end—to create a prototype where products are purchased directly with crypto, eliminating fiat conversion and streamlining the decentralized shopping experience.",
+      "descriptionOld": "I’ve always been passionate about emerging technologies and the DeFi ecosystem, so I set out to explore its potential by developing a crypto-based eCommerce concept. The idea was to allow users to purchase products directly in cryptocurrency, without relying on fiat at any point. For this project, I built only the core portion of the platform needed to run an initial smoke test and gauge user interest. I handled every aspect of the prototype — front-end, back-end, and UI/UX design — creating a functional preview of how decentralized payments could seamlessly integrate into an online shopping experience.",
       "coverImg": "/img/bitcunia.png",
       "images": [
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
@@ -65,7 +71,9 @@
       "id": "4",
       "name": "Personal Portfolio",
       "type": "Personal",
-      "description": "I built my personal portfolio as a way to showcase my projects while improving my skills with TailwindCSS. The website reflects my style and workflow, and served as a hands-on opportunity to deepen my understanding of modern utility-first design and responsive front-end development.",
+      "problem": "I required a high-performance, professional platform to consolidate and effectively present my technical projects and full-stack capabilities to recruiters.",
+      "description":"I designed and developed a minimalist, responsive portfolio focused on performance and UX. I implemented a clear Problem/Solution architecture for project descriptions to highlight my results-oriented approach and clean design principles.",
+      "descriptionOld": "I built my personal portfolio as a way to showcase my projects while improving my skills with TailwindCSS. The website reflects my style and workflow, and served as a hands-on opportunity to deepen my understanding of modern utility-first design and responsive front-end development.",
       "coverImg": "/img/portfolio.png",
       "images": [
         { "src": "/assets/projects/portfolio/cover.jpg", "alt": "Anteprima portfolio", "role": "cover" }
