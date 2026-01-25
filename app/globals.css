@@ -22,19 +22,24 @@ body {
   height: 330px;
 }
 
-/* Definiamo i fotogrammi dell'animazione */
 @keyframes spawn {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Parte 20px più in basso */
+    transform: translateY(30px) translateZ(0); /* Aggiunto translateZ per hardware acceleration */
   }
   to {
     opacity: 1;
-    transform: translateY(0);    /* Arriva alla posizione originale */
+    transform: translateY(0) translateZ(0);
   }
 }
 
-/* Creiamo la classe da applicare al div */
 .animate-spawn {
   animation: spawn 0.5s ease-out forwards;
+  will-change: opacity, transform; /* Pre-ottimizza le proprietà animate */
+  backface-visibility: hidden; /* Previene flickering */
+  -webkit-backface-visibility: hidden;
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
 }

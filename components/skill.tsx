@@ -38,7 +38,7 @@ function Skill({name, onClick, isActive, type}: { name: string , onClick?: () =>
             case "Git":
                 return "/img/git.svg";
             case "OpenAI SDK":
-                return "/img/openai.svg";
+                return "/img/openAi.svg";
             case "Stripe":
                 return "/img/stripe.svg";
             case "BeautifulSoup":

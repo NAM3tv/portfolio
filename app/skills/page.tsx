@@ -101,7 +101,7 @@ export default function SkillsPage() {
           {/* COLONNA DESTRA: ACHIEVEMENTS (35%) */}
           <div className="lg:w-[35%] flex flex-col lg:h-full h-auto relative lg:overflow-hidden">
             <h1 className="text-2xl font-bold lg:mt-[4vh] mt-[2vh] lg:mx-0 mx-5">Achievements</h1>
-            <div key={selectedSkill} className="lg:flex-1 h-full flex-col flex lg:w-[80%] w-[90%] lg:mb-[4vh] mt-5 animate-spawn lg:overflow-y-auto lg:mx-0 mx-5 mb-[15vh] pb-[15vh]
+            <div key={selectedSkill} className="lg:flex-1 h-full flex-col flex lg:w-[80%] w-[90%] lg:mb-[4vh] mt-5 animate-spawn lg:overflow-y-auto lg:mx-0 mx-5 pb-[25vh] lg:pb-0
             /* Classi per la scrollbar senza frecce */
               [&::-webkit-scrollbar]:w-2
               [&::-webkit-scrollbar-button]:h-0

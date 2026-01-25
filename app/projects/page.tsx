@@ -3,47 +3,37 @@ import Background from "@/components/background"
 import ProjectCard from "@/components/projectCard";
 import projectsData from "@/data/projects.json";
 import MobileNav from "@/components/mobileNav"
+
 export default function Home(){
     return(
         <>
-        <Background clipPath="polygon(0% 55%, 100% 25%, 100% 70%, 0% 100%)" className="mt-40"/>
-        <Header/>
-        <MobileNav page="projects"/>
-        <h1 className="text-3xl font-bold mt-[5vh] mb-2 ml-[7%]">Projects</h1> 
-        <div className="w-full h-auto relative z-1 flex lg:flex-wrap lg:flex-row flex-col justify-center animate-spawn
-            /* 1. Nasconde le frecce e personalizza la larghezza */
-            [&::-webkit-scrollbar]:w-[8px]
-            [&::-webkit-scrollbar-button]:hidden
-            /* 2. Personalizza il binario (track) */
-            [&::-webkit-scrollbar-track]:bg-transparent
-            /* 3. Personalizza la maniglia (thumb) */
-            [&::-webkit-scrollbar-thumb]:bg-black/20
-            [&::-webkit-scrollbar-thumb]:rounded-full
-            [&::-webkit-scrollbar-thumb]:border-[2px]
-            [&::-webkit-scrollbar-thumb]:border-transparent
-            [&::-webkit-scrollbar-thumb]:bg-clip-content
-            /* 4. Hover sulla maniglia */
-            hover:[&::-webkit-scrollbar-thumb]:bg-green-500
-            /* 5. Supporto Firefox */
-            [scrollbar-width:thin]
-            [scrollbar-color:rgba(0,0,0,0.2)_transparent]
-        ">
-            
-            {
-                projectsData.map((item, index)=>{
-                    return(
-                        <ProjectCard
-                        key={index}
-                        id={item.id}
-                        name={item.name}
-                        type={item.type}
-                        coverImg={item.coverImg}
-                        tech={item.tech}
-                        />
-                    );
-                })
-            }
-        </div>
+        <Background clipPath="polygon(0% 55%, 100% 25%, 100% 70%, 0% 100%)" className="mt-10 lg:mt-30"/>
+        <main className="w-full h-screen flex flex-col overflow-y-auto ">
+            <Header/>
+            <MobileNav page="projects"/>
+            {/* Contenitore scrollabile */}
+            <div className="flex-1">
+                <h1 className="text-3xl font-bold mt-[5vh] mb-2 ml-[7%] shrink-0">Projects</h1> 
+                {/* Contenitore flex per i card */}
+                <div className="w-full relative flex lg:flex-wrap lg:flex-row flex-col justify-center animate-spawn pb-[25vh] lg:pb-0">
+                    {
+                        projectsData.map((item, index)=>{
+                            return(
+                                <ProjectCard
+                                key={index}
+                                id={item.id}
+                                name={item.name}
+                                type={item.type}
+                                coverImg={item.coverImg}
+                                tech={item.tech}
+                                />
+                            );
+                        })
+                    }
+                </div>
+            </div>
+        </main>
+        
         </>
     )
 }

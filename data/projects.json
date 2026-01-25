@@ -34,6 +34,23 @@
       "link": "https://www.msgrent.com/chi-siamo/"
     },
     {
+      "id": "5",
+      "name": "Automated roll out system",
+      "type": "Business",
+      "companyName": "Generali S.p.A",
+      "problem": "Competitive CS2 players lacked a platform for continuous monetization of their gaming skills, restricted only to fixed-schedule tournaments with specific registration deadlines.",
+      "description": "I co-founded an eSports startup to address this gap, building an on-demand competitive matchmaking platform. I led the front-end development, designed the UI/UX, and managed API integrations to ensure a seamless user experience. Furthermore, I supported back-end development, handled administrative operations, and developed the custom Electron.js desktop client used by our AI-powered anti-cheat system.",
+      "coverImg": "/img/generali.webp",
+      "images": [
+        { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
+        { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
+      ],
+      "tech": ["Html","Css", "JavaScript", "Electron.js", "Tailwind"],
+      "tools": ["Git"],
+      "git": false,
+      "link": "https://morfeux.com/"
+    },
+    {
       "id": "2",
       "name": "Uber but for Bus",
       "type": "School",
@@ -57,7 +74,7 @@
       "problem":"People have no way to use their cryptocurrencies without necessarily having to go through fiat currency exchanges for everyday purchases.",
       "description": "Driven by my passion for DeFi and emerging tech, I developed a functional MVP to conduct a smoke test and validate user interest. I handled the entire full-stack process—UI/UX, front-end, and back-end—to create a prototype where products are purchased directly with crypto, eliminating fiat conversion and streamlining the decentralized shopping experience.",
       "descriptionOld": "I’ve always been passionate about emerging technologies and the DeFi ecosystem, so I set out to explore its potential by developing a crypto-based eCommerce concept. The idea was to allow users to purchase products directly in cryptocurrency, without relying on fiat at any point. For this project, I built only the core portion of the platform needed to run an initial smoke test and gauge user interest. I handled every aspect of the prototype — front-end, back-end, and UI/UX design — creating a functional preview of how decentralized payments could seamlessly integrate into an online shopping experience.",
-      "coverImg": "/img/bitcunia.png",
+      "coverImg": "/img/bitcunia.webp",
       "images": [
         { "src": "/assets/projects/glavan/cover.jpg", "alt": "Homepage Glavan", "role": "cover" },
         { "src": "/assets/projects/glavan/detail1.jpg", "alt": "Dettaglio hero" }
