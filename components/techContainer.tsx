@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaReact } from "react-icons/fa";
 const ReactIcon = FaReact as any;
-function TechContainer({name, pxSize}: any ){
+function TechContainer({name, pxSize, className}: any ){
     function imgHandle(techName: string){
         switch(techName){
             case "Html":
@@ -44,8 +44,8 @@ function TechContainer({name, pxSize}: any ){
     const techName = imgHandle(name);
 
     return (
-        <div className="w-fit h-10 flex items-center justify-center bg-[#f2f3f7] rounded-[20px] p-2.5 mr-[2%] mt-3 text-[#42b847] focus:border-solid focus:border-[#42b847]">
-            <Image src={techName} width={pxSize} height={pxSize} alt="" className="mr-1.25"/>
+        <div className={`w-fit h-10 flex items-center justify-center bg-[#f2f3f7] rounded-[20px] p-2.5 mr-[2%] mt-3 text-[#42b847] focus:border-solid focus:border-[#42b847] ${className}`}>
+            <Image src={techName} width={pxSize} height={pxSize} alt="" className={`mr-1.25`}/>
             <p className={`text-[${pxSize}]`}>{name}</p>
         </div> 
     );

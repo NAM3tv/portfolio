@@ -42,22 +42,22 @@ function companyInfos(){
 function github(){
     if(project!.git){
         return(
-            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="lg:w-[30%] lg:mb-0 mb-[15vh] w-full h-[5vh] py-7 border-2 lg:ml-5 lg:mt-0 mt-5 border-[#525657] flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
+            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="lg:w-[30%] lg:mb-0 mb-[15vh] w-[90%] h-[5vh] py-7 border-2 lg:ml-5 lg:mt-0 mt-5 border-[#525657] flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
         )
     }else{
         return(
-            <Btn text="Private" icon={<FaGithub/>} className="lg:w-[30%] w-full h-[5vh] lg:mb-0 mb-[15vh] py-7 border-2 border-[red] lg:ml-5 lg:mt-0 mt-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-not-allowed!"/>
+            <Btn text="Private" icon={<FaGithub/>} className="lg:w-[30%] w-[90%] h-[5vh] lg:mb-0 mb-[15vh] py-7 border-2 border-[red] lg:ml-5 lg:mt-0 mt-5 flex items-center justify-center text-[20px] rounded-[10px] text-[red] opacity-40 bg-white cursor-not-allowed!"/>
         )
     }
 }
     return(
         
     <>
-    <main className="h-screen flex flex-col">
+    <main className="h-screen flex flex-col overflow-y-auto">
         <Header/>
         <MobileNav page="projects"/>
-        <div className="flex-1 flex lg:flex-row flex-col h-full  z-1 relative animate-spawn overflow-y-auto pb-[10vh]">
-            <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] lg:w-[60%] lg:h-[70%] w-[90%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
+        <div className="flex-1 flex lg:flex-row flex-col h-full  z-1 relative animate-spawn pb-[10vh] lg:pb-0">
+            <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] lg:w-[55%] lg:h-[70%] w-[90%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
             <div className="lg:w-[50%] lg:mx-[5%]">
                 <h1 className="font-bold lg:text-[2vw] text-2xl projectTitle mb-3 mt-10 mx-[5%] lg:mx-0">{project.name}</h1>
                 {project.type === "Business" ? <p className="text-[15px] font-bold flex items-center mx-[5%] lg:mx-0"> <IoMdBusiness className="mr-1 text-[18px]"/> Business</p> : ""}
@@ -86,10 +86,10 @@ function github(){
                             />
                         )
                     }
-                    <div className="flex lg:flex-row flex-col w-full items-center mt-10">
-                        <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="lg:w-[30%] w-full py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
+                </div>
+                <div className="flex lg:flex-row flex-col w-full items-center mt-10 mb-[15vh] lg:pb-5">
+                        <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="lg:w-[30%] w-[90%] py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
                         {github()}
-                    </div>
                 </div>
             </div>
         </div>

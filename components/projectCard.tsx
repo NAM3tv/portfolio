@@ -31,8 +31,8 @@ function ProjectCard({id, name, type, coverImg, tech}: any) {
     return (
         <div onClick={() => clickHandle(id)} className="flex flex-row lg:flex-col lg:w-[20%] w-[90%] ml-[5%] lg:ml-0 lg:h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
             <Image src={coverImg} width={1920} height={1080} alt="info" className="lg:w-[calc(96%)] w-[40%] rounded-[20px] m-[2%]"/>
-            <div className="">
-                <h1 className="ml-2 mt-1 font-semibold lg:text-[1.2vw] projectName">{name}</h1>
+            <div className="w-[53%] lg:w-full">
+                <h1 className="ml-2 w-full mt-1 font-semibold lg:text-[1.2vw]  truncate">{name}</h1>
                 <div className="type w-full ml-2 flex items-center just">
                     {iconHandle(type)}
                     <p className="text-[15px]">{type} Project</p>
@@ -43,6 +43,15 @@ function ProjectCard({id, name, type, coverImg, tech}: any) {
                         tech && tech.map((item: string, index: any)=>{
                             return(
                                 <TechContainer key={index} name={item} pxSize={13}/>
+                            );
+                        })
+                    }
+                </div>
+                <div className="w-full h-auto flex-1 min-h-0 lg:hidden truncate px-[2%] my-[2%] mt-[-5px] overflow-y-auto content-start flex">
+                    {
+                        tech && tech.slice(0,3).map((item: string, index: any)=>{
+                            return(
+                                <TechContainer key={index} name={item} pxSize={10} className="text-[10px] h-7! "/>
                             );
                         })
                     }
