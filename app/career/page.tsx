@@ -69,8 +69,8 @@ export default function Home() {
               </div>
           </div>  
         </div>
-        <div className="w-[35%] h-screen relative overflow-hidden lg:block hidden">
-            <Background />
+        <div className="fixed lg:block hidden top-0 right-0 w-[35%] h-screen z-0">
+                <Background />
         </div>
       </div>
     </main>

@@ -25,7 +25,7 @@ export default function Home() {
           <p className="lg:ml-[15%] w-full justify-center text-1xl flex items-center text-[#919598] lg:justify-start lg:w-auto lg:text-[1.4vw] lg:mt-3"> <LuMapPin className="mr-1"/> Based in Italy</p>
           <div className="flex w-full flex-col mt-5 lg:flex-row items-center lg:mt-[4%]">
             <Btn className=" w-[90%] lg:w-[25%] shadow-[0_0_10px_2px_#42b847] lg:ml-[15%] py-[5vh] font-bold text-white" text="Projects" siteLink="/projects" icon={<AiOutlineFundProjectionScreen className="text-[20px] text-white mr-[-8px]"/>}/>
-            <a href="https://cal.eu/constantin-glavan-yfle0e/introduction-meeting" target="_blank" className="lg:ml-20 lg:justify-start lg:w-auto lg:mt-0 lg:bg-white bg-[#f2f3f7] py-[3vh] mt-5 w-[90%]  font-bold text-[#42b847] text-[18px] flex items-center justify-center"><FaRegCalendarAlt className="mr-1"/>Book a meeting</a>
+            <a href="https://cal.com/constantin-glavan-xdsdt0/30min" target="_blank" className="lg:ml-20 lg:justify-start lg:w-auto lg:mt-0 lg:bg-white bg-[#f2f3f7] py-[3vh] mt-5 w-[90%]  font-bold text-[#42b847] text-[18px] flex items-center justify-center"><FaRegCalendarAlt className="mr-1"/>Book a meeting</a>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ function CareerPathMobile({companyName, companyLogo, role, startDate, finishDate
         <>
         <div className={`lg:hidden pb-5 h-auto w-full flex overflow-hidden relative lg:grow-height ${className}`}>
             <div className="absolute w-[5px] lg:ml-[100px] ml-7 h-full bg-[#42b847]"></div>
-            <Image src={companyLogo} width={50} height={50} alt="Generali Logo" className="rounded-[10px] lg:ml-[77px] mr-2 ml-1 z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
+            <Image src={companyLogo} width={50} height={50} alt="" className="rounded-[10px] lg:ml-[77px] mr-2 ml-1 z-1 w-[50px] h-[50px] mt-[10px] shadow-[0_0_5px_2px_rgba(0,0,0,0.2)]"></Image>
             <div className="w-full mt-[10px]">
                 <div className="w-full flex items-center text-[16px]">
                     <p className="ml-[2%] font-bold">{companyName}</p>

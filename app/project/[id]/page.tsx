@@ -42,7 +42,7 @@ function companyInfos(){
 function github(){
     if(project!.git){
         return(
-            <Btn text="GitHub" webLink={"/"} icon={<FaGithub/>} className="lg:w-[30%] lg:mb-0 mb-[15vh] w-[90%] h-[5vh] py-7 border-2 lg:ml-5 lg:mt-0 mt-5 border-[#525657] flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
+            <Btn text="GitHub" webLink={project!.git} icon={<FaGithub/>} className="lg:w-[30%] lg:mb-0 mb-[15vh] w-[90%] h-[5vh] py-7 border-2 lg:ml-5 lg:mt-0 mt-5 border-[#525657] flex items-center justify-center text-[20px] rounded-[10px] text-[#525657] bg-white cursor-pointer"/>
         )
     }else{
         return(
@@ -53,20 +53,33 @@ function github(){
     return(
         
     <>
-    <main className="h-screen flex flex-col overflow-y-auto">
+    <main className="h-screen flex flex-row lg:flex-col overflow-y-auto">
         <Header/>
         <MobileNav page="projects"/>
-        <div className="flex-1 flex lg:flex-row flex-col h-full  z-1 relative animate-spawn pb-[10vh] lg:pb-0">
-            <Image src={project.coverImg} alt="" width={1920} height={1080} className="rounded-[20px] lg:w-[55%] lg:h-[70%] w-[90%] mt-10 ml-[5%] shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"/>
+        <div className=" flex lg:items-start lg:flex-row flex-col h-full  z-1 relative animate-spawn pb-[10vh] lg:pb-0">
+            <div className="lg:w-[50%] w-[90%] mt-10 ml-[5%]">
+    
+                {/* 2. L'immagine: riempie il div mantenendo le proporzioni */}
+                <Image 
+                    src={project.coverImg} 
+                    alt="" 
+                    width={1920} 
+                    height={1080} 
+                    // w-full = riempi il div padre
+                    // h-auto = mantieni aspect ratio
+                    className="rounded-[20px] w-full h-auto shadow-[0_0_20px_1px_rgba(0,0,0,0.5)]"
+                />
+
+            </div>
             <div className="lg:w-[50%] lg:mx-[5%]">
                 <h1 className="font-bold lg:text-[2vw] text-2xl projectTitle mb-3 mt-10 mx-[5%] lg:mx-0">{project.name}</h1>
                 {project.type === "Business" ? <p className="text-[15px] font-bold flex items-center mx-[5%] lg:mx-0"> <IoMdBusiness className="mr-1 text-[18px]"/> Business</p> : ""}
                 {companyInfos()}
-                <p className="text-[15px] text-red-500 font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><MdOutlineReportProblem   className="mr-1 text-[18px]"/> Problem </p>
+                <p className="w-fit text-[15px] bg-[#fef2f2] text-[#dc2626] border-[#fecaca] border-2 rounded-4xl py-1 px-2  font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><MdOutlineReportProblem   className="mr-1 text-[18px]"/> Problem </p>
                 <p className=" leading-relaxed lg:w-full w-[90%] my-2 relative projectDescription flex items-center mx-[5%] lg:mx-0">{project.problem}</p>
-                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><HiOutlineLightBulb className="mr-1 text-[18px]"/> Solution </p>
+                <p className="w-fit text-[15px] bg-[#fefce8] text-[#ca8a04] border-[#fde68a] border-2 rounded-[20px]  py-1 px-2 font-bold flex items-center mt-5 mx-[5%] lg:mx-0"><HiOutlineLightBulb className="mr-1 text-[18px]"/> Solution </p>
                 <p className=" leading-relaxed lg:w-full w-[90%] my-2 relative projectDescription flex items-center mx-[5%] lg:mx-0">{project.description}</p>
-                <p className="text-[15px] font-bold flex items-center mt-5 mx-[5%] lg:mx-0"> <RiStackLine className="mr-1 text-[18px]"/> Tech Stack</p>
+                <p className="w-fit text-[15px] bg-[#f1f5f9] text-[#0f172a] border-[#cbd5e1] border-2 rounded-[20px] py-1 px-2 font-bold flex items-center mt-5 mx-[5%] lg:mx-0"> <RiStackLine className="mr-1 text-[18px]"/> Tech Stack</p>
                 <div className="lg:w-full w-[90%] flex flex-wrap content-start mx-[5%] lg:mx-0">
                     {
                         project.tech.map((tech, index) =>
@@ -87,7 +100,7 @@ function github(){
                         )
                     }
                 </div>
-                <div className="flex lg:flex-row flex-col w-full items-center mt-10 mb-[15vh] lg:pb-5">
+                <div className="flex lg:flex-row flex-col w-full items-center mt-10 mb-[15vh] lg:mb-0 lg:pb-10">
                         <Btn webLink={project.link} text="Web Site" icon={<FiExternalLink/>} className="lg:w-[30%] w-[90%] py-7 text-white border-2 border-[#42b847] rounded-[10px] text-[20px]"/>
                         {github()}
                 </div>
