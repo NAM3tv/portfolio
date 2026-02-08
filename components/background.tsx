@@ -26,7 +26,6 @@ export default function Background({ clipPath = "none", className = "" }: Backgr
       if (canvas) {
         const gradient = new window.Gradient();
         gradient.initGradient("#gradient-canvas");
-        console.log("✅ Gradiente inizializzato");
       }
     }
   };
