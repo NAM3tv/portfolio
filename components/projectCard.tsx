@@ -6,14 +6,10 @@ import { IoMdBusiness } from "react-icons/io";
 import { TbSchool } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import {ProjectCardProps} from "@/types";
 import { Skeleton } from "@/components/ui/skeleton"
 
-
-const SchoolIcon = TbSchool as any;
-const BusinessIcon = IoMdBusiness as any;
-const PersonalIcon = FaRegUser as any;
-
-function ProjectCard({id, name, type, coverImg, tech}: any) {
+function ProjectCard({id, name, type, coverImg, tech}: ProjectCardProps) {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     function iconHandle(type: string){
@@ -21,9 +17,9 @@ function ProjectCard({id, name, type, coverImg, tech}: any) {
             case "School":
                 return <TbSchool className="lg:text-[20px] mr-2"/>;
             case "Business":
-                return <BusinessIcon className="lg:text-[20px] mr-2"/>;
+                return <IoMdBusiness className="lg:text-[20px] mr-2"/>;
             case "Personal":
-                return <PersonalIcon className="lg:text-[20px] mr-2"/>;
+                return <FaRegUser className="lg:text-[20px] mr-2"/>;
         }
     }
 

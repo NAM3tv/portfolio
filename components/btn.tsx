@@ -4,7 +4,7 @@ function Btn({text, icon, className, webLink, siteLink}: any){
     const router = useRouter();
     function redirect(){
         if(webLink){
-            window.open(webLink, "_blank");
+            window.open(webLink, "_blank", "noopener,noreferrer");
         }
         if(siteLink){
             router.push(siteLink);

@@ -1,50 +1,14 @@
 "use client"
 import Image from "next/image";
-import { useState } from "react";
 import { AiOutlineTool } from "react-icons/ai";
 import { TbApi } from "react-icons/tb";
-const ToolIcon = AiOutlineTool as any;
-const ApiIcon = TbApi as any;
+import {SkillProps} from "@/types";
+import { techIcons } from "@/data/constants";
 
-function Skill({name, onClick, isActive, type}: { name: string , onClick?: () => void, isActive:boolean, type:string}) {
+
+function Skill({name, onClick, isActive, type}: SkillProps) {
     function imgHandle(techName: string){
-        switch(techName){
-            case "Html":
-                return "/img/html.svg";
-            case "Css":
-                return "/img/css.svg";
-            case "Python":
-                return "/img/python.svg";
-            case "JavaScript":
-                return "/img/javascript.svg";
-            case "Nginx":
-                return "/img/nginx.svg";
-            case "FastApi":
-                return "/img/fastapi.svg";
-            case "Docker":
-                return "/img/docker.svg";
-            case "PostgreSQL":
-                return "/img/postgre.svg";
-            case "Electron.js":
-                return "/img/electron.svg";
-            case "Tailwind":
-                return "/img/tailwind.svg";
-            case "React.js":
-                return "/img/react.svg";
-            case "Next.js":
-                return "/img/next.svg";
-            case "LeafLet":
-                return "/img/leafLet.svg";
-            case "Git":
-                return "/img/git.svg";
-            case "OpenAI SDK":
-                return "/img/openAi.svg";
-            case "Stripe":
-                return "/img/stripe.svg";
-            case "BeautifulSoup":
-                return "/img/beautifulSoup.svg"
-            default: return "/";
-        }
+        return techIcons[techName]; // Ritorna un'icona di default se non troviamo il nome
     }
     const techName = imgHandle(name);
 
@@ -52,7 +16,7 @@ function Skill({name, onClick, isActive, type}: { name: string , onClick?: () =>
         <>
             <div onClick={onClick} className={`lg:w-[20%] w-[35%] shrink-0  relative aspect-square rounded-[20px] lg:self-start m-3 shadow-[0_0_5px_2px_rgba(0,0,0,0.2)] flex flex-col items-center justify-center cursor-pointer transition duration-300 hover:scale-105 ${isActive ? 'border-4 border-[#42b847]' : 'border-transparent'}`}>
                 <Image src={techName} width={100} height={100} alt="" className="w-[50%]"/>
-                {type === "tool" ? <ToolIcon className="absolute text-[25px] top-1.5 left-1.5"/> : type === "api" ? <ApiIcon className="absolute text-[25px] top-1.5 left-1.5" /> : ""}
+                {type === "tool" ? <AiOutlineTool className="absolute text-[25px] top-1.5 left-1.5"/> : type === "api" ? <TbApi className="absolute text-[25px] top-1.5 left-1.5" /> : ""}
                 <h2 className="mt-3 font-bold lg:text-[20px]">{name}</h2>
             </div>
         </>

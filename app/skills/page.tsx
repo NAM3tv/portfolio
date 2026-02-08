@@ -3,9 +3,8 @@ import Header from "@/components/header";
 import Skill from "@/components/skill";
 import skillsData from "@/data/skills.json";
 import projectsData from "@/data/projects.json";
-import { useState, useEffect, useRef } from "react";
-import Achivment from "@/components/achivment";
-import MobileNav from "@/components/mobileNav"
+import { useState} from "react";
+import Achievement from "@/components/Achievement";
 
 export default function SkillsPage() {
 
@@ -59,7 +58,6 @@ export default function SkillsPage() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
-      <MobileNav page="skills"/>
       <Header />
 
       {/* Contenitore principale che occupa lo spazio rimanente */}
@@ -121,7 +119,7 @@ export default function SkillsPage() {
                 projectsData.filter(project => 
                   project.tech.includes(selectedSkill!) || project.tools.includes(selectedSkill!)
                 ).map((filteredProject, index) => 
-                  <Achivment 
+                  <Achievement 
                     key={index} 
                     id= {filteredProject.id}
                     img={filteredProject.coverImg} 

@@ -1,24 +1,17 @@
 "use client"
-import Image from "next/image";
-import Link from "next/link";
-import {useState} from "react";
 import Header from "@/components/header"; // L'alias @ è magico!
 import Background from "@/components/background";
 import CareerPath from "@/components/careerPath";
 import careerData from "@/data/career.json";
-import MobileNav from "@/components/mobileNav";
 import CareerPathMobile from "@/components/mobileCareerPath";
 
 export default function Home() {
-  const [hoverStatus, SetHoverStatus] = useState("Msg S.p.A")
-  const [firstElement, setFirstElement] = useState("firstCareerElement")
   return (
     <>
     <main className="w-full h-screen flex flex-col overflow-y-auto ">
       <div className="flex relative lg:mb-0 w-full lg:ml-0  mb-[25vh]">
         <div className="lg:w-[65%] w-[95%] flex-col items-center">
           <Header />
-          <MobileNav page="career"/>
           <div className="ml-[5%] animate-spawn">
               <h1 className="text-3xl font-bold my-[5vh] lg:ml-[80px]">Career</h1> 
               {

@@ -10,7 +10,6 @@ export default function Home(){
         <Background clipPath="polygon(0% 55%, 100% 25%, 100% 70%, 0% 100%)" className="mt-10 lg:mt-30"/>
         <main className="w-full h-screen flex flex-col overflow-y-auto ">
             <Header/>
-            <MobileNav page="projects"/>
             {/* Contenitore scrollabile */}
             <div className="flex-1">
                 <h1 className="text-3xl font-bold mt-[5vh] mb-2 ml-[7%] shrink-0">Projects</h1> 

@@ -62,8 +62,6 @@ export default function Home(){
       <div className="fixed top-0 right-0 w-[35%] h-screen z-0">
         <Background />
       </div>
-      
-      <MobileNav page="contacts"/>
     </main>
     </>
     )

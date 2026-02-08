@@ -2,7 +2,8 @@ import type { Metadata,} from "next";
 import Script from 'next/script'
 import { Geist, Geist_Mono, Allura } from "next/font/google";
 import "./globals.css";
-import Background from '@/components/background' 
+import Background from '@/components/background';
+import MobileNav from "@/components/mobileNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         
         {children}
+        <MobileNav/>
       </body>
     </html>
   );

@@ -55,7 +55,6 @@ function github(){
     <>
     <main className="h-screen flex flex-row lg:flex-col overflow-y-auto">
         <Header/>
-        <MobileNav page="projects"/>
         <div className=" flex lg:items-start lg:flex-row flex-col h-full  z-1 relative animate-spawn pb-[10vh] lg:pb-0">
             <div className="lg:w-[50%] w-[90%] mt-10 ml-[5%]">
     

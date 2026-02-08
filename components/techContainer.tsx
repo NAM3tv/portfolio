@@ -1,45 +1,8 @@
 import Image from "next/image";
-import { FaReact } from "react-icons/fa";
-const ReactIcon = FaReact as any;
+import { techIcons } from "@/data/constants";
 function TechContainer({name, pxSize, className}: any ){
     function imgHandle(techName: string){
-        switch(techName){
-            case "Html":
-                return "/img/html.svg";
-            case "Css":
-                return "/img/css.svg";
-            case "Python":
-                return "/img/python.svg";
-            case "JavaScript":
-                return "/img/javascript.svg";
-            case "Nginx":
-                return "/img/nginx.svg";
-            case "FastApi":
-                return "/img/fastapi.svg";
-            case "Docker":
-                return "/img/docker.svg";
-            case "PostgreSQL":
-                return "/img/postgre.svg";
-            case "Electron.js":
-                return "/img/electron.svg";
-            case "Tailwind":
-                return "/img/tailwind.svg";
-            case "React.js":
-                return "/img/react.svg";
-            case "Next.js":
-                return "/img/next.svg";
-            case "LeafLet":
-                return "/img/leafLet.svg";
-            case "Git":
-                return "/img/git.svg";
-            case "OpenAI SDK":
-                return "/img/openai.svg";
-            case "Stripe":
-                return "/img/stripe.svg";
-            case "BeautifulSoup":
-                return "/img/beautifulSoup.svg"
-            default: return "/";
-        }
+        return techIcons[techName];
     }
     const techName = imgHandle(name);
 

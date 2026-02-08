@@ -4,7 +4,6 @@ import Header from "@/components/header"; // L'alias @ è magico!
 import Background from "@/components/background";
 import Me from "@/components/me";
 import Btn from "@/components/btn";
-import Caledar from "@/components/calendar";
 import MobileNav from "@/components/mobileNav"
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { LuBookMarked } from "react-icons/lu";
@@ -35,7 +34,7 @@ export default function Home() {
 
     </div>
     <p className="text-[#919598]/50 absolute bottom-2 left-2 items-center text-[14px] hidden lg:flex"> <IoMdBusiness className="mr-1"/> P.IVA: 03198400305</p>
-    <MobileNav page="home"/>
+    
     </>
   );
 }

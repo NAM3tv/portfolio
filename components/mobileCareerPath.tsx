@@ -6,12 +6,9 @@ import Btn from "./btn"
 import { MdOutlineTask } from "react-icons/md";
 import { LuMapPin } from "react-icons/lu";
 import { FiExternalLink } from "react-icons/fi";
-//Icons
-const TaskIcon = MdOutlineTask as any;
-const WhereIcon = LuMapPin as any;
-const LinkIcon = FiExternalLink as any;
+import {CareerPathProps} from "@/types";
 
-function CareerPathMobile({companyName, companyLogo, role, startDate, finishDate, location, tasks, webLink, className}: any){
+function CareerPathMobile({companyName, companyLogo, role, startDate, finishDate, location, tasks, webLink, className}: CareerPathProps){
     const careerContainerRef = useRef<HTMLDivElement>(null);
     const componentRef = useRef<HTMLDivElement>(null);
     return (
@@ -23,13 +20,13 @@ function CareerPathMobile({companyName, companyLogo, role, startDate, finishDate
                 <div className="w-full flex items-center text-[16px]">
                     <p className="ml-[2%] font-bold">{companyName}</p>
                     <p className="mx-[1%]">-</p>
-                    <p className=" flex items-center">{<WhereIcon className="w-[16px]"/>} {location}</p>
+                    <p className=" flex items-center">{<LuMapPin className="w-[16px]"/>} {location}</p>
                 </div>
                 <h1 className="ml-[2%]">{startDate} - {!finishDate ? "Now" : finishDate}</h1>
                 <div className="w-full ml-[2%] lg:hidden">
                     <h2 className="mt-[15px] p-0 font-bold">{role}</h2>
                     <div className="flex w-full items-center mt-[15px]">
-                        <TaskIcon className="text-[16px]"/>
+                        <MdOutlineTask className="text-[16px]"/>
                         <h2 className="p-0 font-bold">Tasks:</h2>
                     </div>
                     <ul className="list-disc list-outside ml-5 mt-2.5">
@@ -45,7 +42,7 @@ function CareerPathMobile({companyName, companyLogo, role, startDate, finishDate
                         <Btn 
                             className="lg:mt-5 lg:w-[15%] w-[50%] my-5 text-white" 
                             text="Web Site" 
-                            icon={<LinkIcon className="text-white text-[16px]"/>}
+                            icon={<FiExternalLink className="text-white text-[16px]"/>}
                             webLink = {webLink}
                         />
                     )}
