@@ -34,11 +34,9 @@ export default function RootLayout({
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
   return (
     <html lang="en">
-      {/* Rimosso <head> manuale per lo script */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${allura.variable} antialiased`}
       >
-        {/* Il componente Script va qui, fuori o dentro il body, Next lo gestirà */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
             {`
               (function(c,l,a,r,i,t,y){
