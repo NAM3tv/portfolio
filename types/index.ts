@@ -25,3 +25,23 @@ export interface CareerPathProps {
     isFirst?: boolean;
     className?: string;
 }
+
+export interface btnProps{
+    text: string;
+    icon: React.ReactNode;
+    siteLink?: string;
+    webLink?:string | boolean ;
+    className?: string;
+}
+
+export interface AchivmentProps{
+  id: string;
+  img: string;
+  name: string;
+}
+
+export interface techProps{
+  name: string;
+  pxSize: number;
+  className?: string;
+}

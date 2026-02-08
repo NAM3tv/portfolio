@@ -1,12 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiExternalLink } from "react-icons/fi";
-const LinkIcon = FiExternalLink as any;
-type AchivmentProps = {
-  id: string;
-  img: string;
-  name: string;
-};
+import { AchivmentProps } from "@/types";
+
 function Achivment({id, img, name} : AchivmentProps){
     const router = useRouter();
     function clickHandle(idPage: string){
@@ -16,7 +12,7 @@ function Achivment({id, img, name} : AchivmentProps){
         <>
             <div onClick={() => clickHandle(id)} className="lg:w-full w-auto shrink-0 h-30 rounded-[20px] border-3 border-[#42b847] flex items-center p-4 my-3 lg:mx-0 mx-2 cursor-pointer">
                 <Image src={img} width={1920} height={1080} alt="" className="w-30 rounded-[10px]"/>
-                <p className="ml-5 text-[20px] font-bold flex items-center">{name}{<LinkIcon className="ml-1 text-[20px]"/>}</p>
+                <p className="ml-5 text-[20px] font-bold flex items-center">{name}{<FiExternalLink className="ml-1 text-[20px]"/>}</p>
             </div>
         </>
     );

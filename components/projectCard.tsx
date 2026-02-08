@@ -26,30 +26,7 @@ function ProjectCard({id, name, type, coverImg, tech}: ProjectCardProps) {
     function clickHandle(id:string){
         router.push(`/project/${id}`);
     }
-    {loading && (
-            <div className="flex flex-row lg:flex-col lg:w-[20%] w-[90%] ml-[5%] lg:ml-0 lg:h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
-                {/* Skeleton immagine */}
-                <Skeleton className="lg:w-[calc(96%)] w-[1920px] h-[1080px] rounded-[20px] m-[2%]" />
-                
-                {/* Skeleton titolo */}
-                <div className="w-[53%] lg:w-full" >
-                    <Skeleton className="ml-2 w-full mt-1 font-semibold lg:text-[1.2vw]  truncate" />
-                    <div className="type w-full ml-2 flex items-center just">
-                        <Skeleton className="lg:text-[20px] mr-2"/>
-                        <Skeleton className="text-[15px]"/>
-                    </div>
-                </div>
-                <Skeleton className="ml-2 text-[14px] mt-[15px] mb-[0px] lg:block hidden"/>
-                {/* Skeleton descrizione (2 righe) */}
-                <div className="space-y-2">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-                </div>
-                
-                {/* Skeleton prezzo */}
-                <Skeleton className="h-8 w-24" />
-            </div>
-    )}
+    
     return (
         
         <div onClick={() => clickHandle(id)} className="flex flex-row lg:flex-col lg:w-[20%] w-[90%] ml-[5%] lg:ml-0 lg:h-[63vh] bg-white shadow-[0_0_20px_1px_rgba(0,0,0,0.5)] rounded-[20px] mx-[1%]  my-[3%] overflow-hidden cursor-pointer transition duration-300 hover:scale-105">
